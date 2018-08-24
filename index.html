@@ -35,31 +35,31 @@
             <h4 class="form-right_subtitle">Veuillez renseigner les informations ci-dessous.</h4>
             <form action="POST" class="signIn">
                 <div class="signIn-gender">
-                    <label>Vous êtes</label>
+                    <p class="signIn-gender_title">Vous êtes</p>
                     
                     <label>
-                        <input type="radio" name="gender" id="">
+                        <input type="radio" name="gender">
                         <span></span>
-                        Mr
+                        <p>Mr</p>
                     </label>
 
                     <label>
-                        <input type="radio" name="gender" id="">
+                        <input type="radio" name="gender">
                         <span></span>
-                        Mme
+                        <p>Mme</p>
                     </label>
 
                     <label>
-                        <input type="radio" name="gender" id="">
+                        <input type="radio" name="gender">
                         <span></span>
-                        Mme
+                        <p>Mme</p>
                     </label>
                 </div>
-                <input type="text" name="lastName" id="">
-                <input type="text" name="firstName" id="">
-                <input type="text" name="email" id="">
+                <input type="text" name="lastName" placeholder="Nom" class="signIn-input">
+                <input type="text" name="firstName" placeholder="Prénom" class="signIn-input">
+                <input type="text" name="email" placeholder="Email" class="signIn-input">
                 <div class="signIn-date">
-                    <select name="month" id="">
+                    <select name="month">
                         <option selected>Date de naissance</option>
                         <option>January</option>
                         <option>February</option>
@@ -73,6 +73,21 @@
                         <option>October</option>
                         <option>November</option>
                         <option>December</option>
+                    </select>
+                    <select name="year">
+                        <option></option>
+                        <option>1999</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2004</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
                     </select>
                     <select name="day">
                         <option></option>
@@ -108,28 +123,14 @@
                         <option>30</option>
                         <option>31</option>
                     </select>
-                    <select name="year">
-                        <option></option>
-                        <option>1999</option>
-                        <option>2000</option>
-                        <option>2001</option>
-                        <option>2002</option>
-                        <option>2004</option>
-                        <option>2004</option>
-                        <option>2005</option>
-                        <option>2006</option>
-                        <option>2007</option>
-                        <option>2008</option>
-                        <option>2009</option>
-                        <option>2010</option>
-                    </select>
                 </div>
-                <input type="text" name="postal" id="">
-                <input type="password" name="password" id="">
-                <input type="password" name="confirmPassword" id="">
-                <div class="conditions">
-                    <input type="checkbox" name="conditions" id="">
-                    <label>J’accepte les conditions générales de ventes et les respecteraient sans conditions. </label>
+                <input type="text" name="postal" placeholder="Code Postal" class="signIn-input">
+                <input type="password" name="password" placeholder="Mot de Passe" class="signIn-input">
+                <input type="password" name="confirmPassword" placeholder="Confirmation mot de Passe" class="signIn-input">
+                <div class="signIn-conditions">
+                    <input type="checkbox" name="conditions">
+                    <span></span>
+                    <p>J’accepte les <a href="#">conditions générales de ventes</a> et les respecteraient sans conditions. </p>
                 </div>
 
                 <input type="submit" value="Créer un compte">
