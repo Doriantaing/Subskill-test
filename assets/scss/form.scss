@@ -1,0 +1,102 @@
+@import 'font';
+@import 'reset';
+
+body{
+  font-family: 'open-sans';
+  font-weight: normal;
+}
+
+.form{
+    display: flex;
+    height: 100vh;
+    &-left{
+        width: 434px;
+        background: url('../img/background-left.png')no-repeat center center;
+        padding: 48px 50px 0;
+        &_container{
+            color: #FFF;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+        }
+        .return{
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-family: 'Avenir';
+            a{
+                color: #FFF;
+                text-decoration: none;
+            }
+            p{
+                margin-left: 17px;
+            }
+        }
+        .content{
+            position: absolute;
+            top: 45%;
+            transform: translateY(-45%);
+            &-subtitle{
+                font-size: 10px;
+                font-weight: 500;
+                color: #FFF8F8;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            &-title{
+                font-size: 16px;
+                font-weight: 600;
+                margin: 16px 0 65px 0;
+                letter-spacing: 0.7px;
+            }
+            &-desc{
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                line-height: 19px;
+            }
+        }
+    }
+    &-right{
+        margin: 56px 61px;
+        width: 467px;
+        font-size: 13px;
+        color: #5A5A5A;
+        &_title{
+            font-size: 22px;
+            font-weight: 600;
+            color: #363131;
+            letter-spacing: 0.9px;
+            margin-bottom: 10px;
+        }
+        &_subtitle{
+            font-size: 15px;
+            color: #363131;
+            letter-spacing: 0,6px;
+            margin-bottom: 45px;
+        }
+        .signIn{
+            display: flex;
+            flex-direction: column;
+            &-gender{
+                display: flex;
+                label{
+                    margin-right: 50px;
+                    position: relative;
+                }
+                input{
+                    // opacity: 0;
+                }
+                span{
+                    // width: 19px;
+                    // height: 19px;
+                    // border: 1px solid #5A5A5A;
+                    // border-radius: 50%;
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
+                }
+            }
+        }
+    }
+}

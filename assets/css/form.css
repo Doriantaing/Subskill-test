@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+  font-weight: 600;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir';
+  src: url("../fonts/Avenir-Roman.ttf");
+  font-weight: normal;
+  font-style: normal; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: 'open-sans';
+  font-weight: normal; }
+
+.form {
+  display: flex;
+  height: 100vh; }
+  .form-left {
+    width: 434px;
+    background: url("../img/background-left.png") no-repeat center center;
+    padding: 48px 50px 0; }
+    .form-left_container {
+      color: #FFF;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: 100%; }
+    .form-left .return {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-family: 'Avenir'; }
+      .form-left .return a {
+        color: #FFF;
+        text-decoration: none; }
+      .form-left .return p {
+        margin-left: 17px; }
+    .form-left .content {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-45%); }
+      .form-left .content-subtitle {
+        font-size: 10px;
+        font-weight: 500;
+        color: #FFF8F8;
+        text-transform: uppercase;
+        letter-spacing: 0.5px; }
+      .form-left .content-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 16px 0 65px 0;
+        letter-spacing: 0.7px; }
+      .form-left .content-desc {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        line-height: 19px; }
+  .form-right {
+    margin: 56px 61px;
+    width: 467px;
+    font-size: 13px;
+    color: #5A5A5A; }
+    .form-right_title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #363131;
+      letter-spacing: 0.9px;
+      margin-bottom: 10px; }
+    .form-right_subtitle {
+      font-size: 15px;
+      color: #363131;
+      letter-spacing: 0,6px;
+      margin-bottom: 45px; }
+    .form-right .signIn {
+      display: flex;
+      flex-direction: column; }
+      .form-right .signIn-gender {
+        display: flex; }
+        .form-right .signIn-gender label {
+          margin-right: 50px;
+          position: relative; }
+
+/*# sourceMappingURL=form.css.map */
