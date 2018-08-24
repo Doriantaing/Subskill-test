@@ -1,0 +1,19 @@
+// Globals
+
+@import 'globals/font';
+@import 'globals/reset';
+@import 'globals/variables';
+
+// Mixins
+
+@import 'mixins/responsive';
+
+// Components
+
+@import 'components/form';
+
+
+body {
+    font-family: 'open-sans';
+    font-weight: normal;
+}

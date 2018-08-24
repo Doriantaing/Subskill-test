@@ -1,28 +1,26 @@
-@import 'font';
-@import 'reset';
-
-$white: #fff;
-$title-form: rgba(54,53,49,84);
-$subtitle-form : rgba(54,49,49,84);
-$subtitle: rgba(255,248,248,84);
-$form-input: rgba(90,90,90,90);
-$input-radio:rgba(90,90,90,50);
-$input-border : rgba(151, 151, 151, 40);
-
-
-body {
-    font-family: 'open-sans';
-    font-weight: normal;
-}
-
 .form {
     display: flex;
     height: 100vh;
+    max-width: 1600px;
+    margin: 0 auto;
+    @include for-size(tablet){
+        flex-direction: column-reverse;
+    }
     &-left {
-        width: 434px;
+        width: 40%;
         background: url('../img/background-left.png')no-repeat center center;
-        padding: 48px 50px 0;
+        background-size: cover;
+        @include for-size(big-desktop) {
+            width: 800px;
+        }
+        @include for-size(desktop){
+            width: 434px;
+        }
+        @include for-size(tablet){
+            width: 100%;
+        }
         &_container {
+            padding: 48px 50px 0;
             color: $white;
             display: flex;
             flex-direction: column;
@@ -64,11 +62,12 @@ body {
                 font-size: 14px;
                 letter-spacing: 0.5px;
                 line-height: 19px;
+                margin-right: 50px
             }
         }
     }
     &-right {
-        margin: 56px 61px;
+        margin: 56px auto;
         width: 467px;
         font-size: 13px;
         color: $form-input;
@@ -83,12 +82,13 @@ body {
         &_subtitle {
             font-size: 15px;
             color: $subtitle-form;
-            letter-spacing: 0, 6px;
+            letter-spacing: 0.6px;
             margin-bottom: 45px;
         }
         .signIn {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: repeat(10, 1fr);
+            height: 90%;
             &-input {
                 border: none;
                 border-bottom: 1px solid rgba(151, 151, 151, 40);
@@ -96,8 +96,15 @@ body {
                 margin-bottom: 25px;
                 outline: none;
                 font-size: 13px;
+                letter-spacing: 0.52px;
                 &::placeholder {
                     position: relative;
+                    transition: 0.2s;
+                }
+                &:focus {
+                    &::placeholder {
+                        opacity: 0;
+                    }
                 }
             }
             &-gender {
@@ -144,51 +151,101 @@ body {
                     left: 0;
                 }
             }
-            &-date{
+            &-date {
                 display: grid;
-                grid-template-columns: 1fr  108px  38px;
+                grid-template-columns: 1fr 108px 38px;
                 margin-bottom: 25px;
-                select{
+                &_items {
+                    margin-right: 20px;
+                    position: relative;
+                    &::after {
+                        content: url('../img/select-arrow.svg');
+                        width: 8px;
+                        height: 18px;
+                        position: absolute;
+                        right: 0;
+                        top: 10px;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                select {
                     border: none;
                     background: none;
                     border-radius: 0;
                     border-bottom: 1px solid $input-border;
                     font-size: 13px;
                     color: $form-input;
-                    margin-right: 20px;
                     outline: none;
+                    appearance: none;
+                    -webkit-appearance: none;
                     height: 35px;
-                    &:last-child{
-                        margin-right: 0;
-                    }
+                    width: 100%;
                 }
             }
-            &-conditions{
+            &-conditions {
                 display: flex;
                 align-items: flex-start;
                 font-size: 13px;
                 position: relative;
-                p{
+                p {
                     margin-left: 13px;
                     color: $form-input;
-                    a{
+                    line-height: 19px;
+                    a {
                         color: $form-input;
                         font-style: italic;
                         text-decoration: underline;
                     }
                 }
-                input{
+                input {
                     opacity: 0;
+                    cursor: pointer;
+                    &:checked {
+                        &~span::after {
+                            content: '';
+                            position: absolute;
+                            top: 3px;
+                            left: 3px;
+                            height: 11px;
+                            width: 11px;
+                            background: $form-input;
+                            display: block;
+                        }
+                        &~p {
+                            text-decoration: line-through;
+                        }
+                    }
                 }
-                span{
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  height: 19px;
-                  width: 19px;
-                  border: 1px solid #979797;
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 19px;
+                    width: 19px;
+                    border: 1px solid #979797;
+                    transition: 0.5s;
+                    pointer-events: none;
                 }
             }
+            input[type='submit'] {
+                background: #343333;
+                height: 52px;
+                text-transform: uppercase;
+                color: $white;
+                letter-spacing: 1.62px;
+            }
+        }
+        .logIn-button {
+            font-size: 13px;
+            color: $form-input;
+            opacity: 0.8;
+            letter-spacing: 0.52px;
+            text-decoration: none;
+            position: relative;
+            top: -40px;
+            text-align: center;
         }
     }
 }

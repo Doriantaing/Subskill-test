@@ -1,0 +1,340 @@
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "open-sans";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir-Roman.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.form {
+  display: flex;
+  height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+@media (max-width: 1023px) {
+  .form {
+    flex-direction: column-reverse;
+  }
+}
+.form-left {
+  width: 40%;
+  background: url("../img/background-left.png") no-repeat center center;
+  background-size: cover;
+}
+@media (min-width: 1600px) {
+  .form-left {
+    width: 800px;
+  }
+}
+@media (max-width: 1439px) {
+  .form-left {
+    width: 434px;
+  }
+}
+@media (max-width: 1023px) {
+  .form-left {
+    width: 100%;
+  }
+}
+.form-left_container {
+  padding: 48px 50px 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+.form-left .return {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Avenir";
+}
+.form-left .return a {
+  color: #fff;
+  text-decoration: none;
+}
+.form-left .return p {
+  margin-left: 17px;
+}
+.form-left .content {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-45%);
+}
+.form-left .content-subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  color: #fff8f8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.84;
+}
+.form-left .content-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 16px 0 65px 0;
+  letter-spacing: 0.7px;
+}
+.form-left .content-desc {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 19px;
+  margin-right: 50px;
+}
+.form-right {
+  margin: 56px auto;
+  width: 467px;
+  font-size: 13px;
+  color: #5a5a5a;
+  letter-spacing: 0.5px;
+}
+.form-right_title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #363531;
+  letter-spacing: 0.9px;
+  margin-bottom: 10px;
+}
+.form-right_subtitle {
+  font-size: 15px;
+  color: #363131;
+  letter-spacing: 0.6px;
+  margin-bottom: 45px;
+}
+.form-right .signIn {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  height: 90%;
+}
+.form-right .signIn-input {
+  border: none;
+  border-bottom: 1px solid #979797;
+  height: 35px;
+  margin-bottom: 25px;
+  outline: none;
+  font-size: 13px;
+  letter-spacing: 0.52px;
+}
+.form-right .signIn-input::placeholder {
+  position: relative;
+  transition: 0.2s;
+}
+.form-right .signIn-input:focus::placeholder {
+  opacity: 0;
+}
+.form-right .signIn-gender {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+}
+.form-right .signIn-gender_title {
+  margin-right: 50px;
+}
+.form-right .signIn-gender label {
+  margin-right: 36px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.form-right .signIn-gender label p {
+  margin-left: 13px;
+}
+.form-right .signIn-gender input {
+  opacity: 0;
+}
+.form-right .signIn-gender input:checked ~ span::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background: #5A5A5A;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  opacity: 0.5;
+}
+.form-right .signIn-gender span {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #5a5a5a;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.form-right .signIn-date {
+  display: grid;
+  grid-template-columns: 1fr 108px 38px;
+  margin-bottom: 25px;
+}
+.form-right .signIn-date_items {
+  margin-right: 20px;
+  position: relative;
+}
+.form-right .signIn-date_items::after {
+  content: url("../img/select-arrow.svg");
+  width: 8px;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.form-right .signIn-date_items:last-child {
+  margin-right: 0;
+}
+.form-right .signIn-date select {
+  border: none;
+  background: none;
+  border-radius: 0;
+  border-bottom: 1px solid #979797;
+  font-size: 13px;
+  color: #5a5a5a;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 35px;
+  width: 100%;
+}
+.form-right .signIn-conditions {
+  display: flex;
+  align-items: flex-start;
+  font-size: 13px;
+  position: relative;
+}
+.form-right .signIn-conditions p {
+  margin-left: 13px;
+  color: #5a5a5a;
+  line-height: 19px;
+}
+.form-right .signIn-conditions p a {
+  color: #5a5a5a;
+  font-style: italic;
+  text-decoration: underline;
+}
+.form-right .signIn-conditions input {
+  opacity: 0;
+  cursor: pointer;
+}
+.form-right .signIn-conditions input:checked ~ span::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 11px;
+  width: 11px;
+  background: #5a5a5a;
+  display: block;
+}
+.form-right .signIn-conditions input:checked ~ p {
+  text-decoration: line-through;
+}
+.form-right .signIn-conditions span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  border: 1px solid #979797;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.form-right .signIn input[type=submit] {
+  background: #343333;
+  height: 52px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1.62px;
+}
+.form-right .logIn-button {
+  font-size: 13px;
+  color: #5a5a5a;
+  opacity: 0.8;
+  letter-spacing: 0.52px;
+  text-decoration: none;
+  position: relative;
+  top: -40px;
+  text-align: center;
+}
+
+body {
+  font-family: "open-sans";
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=style.css.map */
