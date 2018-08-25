@@ -395,4 +395,26 @@
             }
         }
     }
+
+    .selectr{
+        &-selected{
+            border: none;
+            background: none;
+            border-radius: 0;
+            border-bottom: 1px solid $input-border;
+            font-size: 13px;
+            color: $form-input;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            height: 35px;
+            width: 100%;
+            cursor: pointer;
+            font-family: 'open-sans';
+            @include for-size(mobile) {
+                font-size: 11px;
+            }
+        }
+    }
 }

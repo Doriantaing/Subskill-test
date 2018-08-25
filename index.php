@@ -88,7 +88,7 @@ $terms = $_GET['agreeTerms'];
                 <input type="text" name="email" placeholder="Email" value="" class="signIn-input">
                 <div class="signIn-date">
                     <div class="signIn-date_items">
-                        <select name="month" id="select-js">
+                        <select name="month" class="select-js">
                             <option selected>Date de naissance</option>
                             <option>January</option>
                             <option>February</option>
@@ -105,7 +105,7 @@ $terms = $_GET['agreeTerms'];
                         </select>
                     </div>
                     <div class="signIn-date_items">
-                        <select name="year">
+                        <select name="year" class="select-js">
                             <option></option>
                             <option>1999</option>
                             <option>2000</option>
@@ -123,7 +123,7 @@ $terms = $_GET['agreeTerms'];
                     </div>
                     <div class="signIn-date_items">
 
-                        <select name="day">
+                        <select name="day" class="select-js">
                             <option></option>
                             <option>1</option>
                             <option>2</option>

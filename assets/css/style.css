@@ -392,6 +392,24 @@ table {
       @media (max-width: 767px) {
         .form-right .logIn-button {
           font-size: 11px; } }
+  .form .selectr-selected {
+    border: none;
+    background: none;
+    border-radius: 0;
+    border-bottom: 1px solid #979797;
+    font-size: 13px;
+    color: #5a5a5a;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 35px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'open-sans'; }
+    @media (max-width: 767px) {
+      .form .selectr-selected {
+        font-size: 11px; } }
 
 body {
   font-family: 'open-sans';
