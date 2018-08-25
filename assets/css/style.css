@@ -82,6 +82,10 @@ table {
     .form .return a {
       color: #fff;
       text-decoration: none; }
+      .form .return a img {
+        transition: 0.5s; }
+        .form .return a img:hover {
+          transform: scale(1.2); }
     .form .return p {
       margin-left: 17px; }
       @media (max-width: 767px) {
@@ -181,7 +185,7 @@ table {
     .form-right .signIn {
       display: grid;
       grid-template-rows: repeat(10, 1fr);
-      height: 90%; }
+      height: 80%; }
       @media (max-width: 1023px) {
         .form-right .signIn {
           justify-content: center;
@@ -209,13 +213,19 @@ table {
           opacity: 0; }
         .form-right .signIn-input_password {
           position: relative; }
-          .form-right .signIn-input_password img {
+          .form-right .signIn-input_password svg {
             width: 19px;
             height: 14px;
             position: absolute;
             top: 11px;
             right: 10px;
-            cursor: pointer; }
+            cursor: pointer;
+            transition: 0.5s; }
+            .form-right .signIn-input_password svg:hover #Signup {
+              fill: #363531;
+              opacity: 0.8; }
+          .form-right .signIn-input_password--active svg #Signup {
+            fill: #363531; }
       .form-right .signIn-gender {
         display: flex;
         margin-bottom: 25px;
@@ -243,15 +253,7 @@ table {
           opacity: 0; }
           .form-right .signIn-gender input:checked ~ span::after {
             content: "";
-            width: 11px;
-            height: 11px;
-            background: #5A5A5A;
-            display: block;
-            border-radius: 50%;
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            opacity: 0.5; }
+            display: block; }
         .form-right .signIn-gender span {
           width: 19px;
           height: 19px;
@@ -260,6 +262,22 @@ table {
           position: absolute;
           top: 0;
           left: 0; }
+          .form-right .signIn-gender span::after {
+            content: "";
+            display: none;
+            width: 11px;
+            height: 11px;
+            background: #5A5A5A;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: 0.5s; }
+          .form-right .signIn-gender span:hover::after {
+            content: "";
+            display: block;
+            background: #5A5A5A;
+            opacity: 0.5; }
       .form-right .signIn-date {
         display: grid;
         grid-template-columns: 1fr 108px 38px;
@@ -289,6 +307,7 @@ table {
           -moz-appearance: none;
           height: 35px;
           width: 100%;
+          cursor: pointer;
           font-family: 'open-sans'; }
           @media (max-width: 767px) {
             .form-right .signIn-date select {
@@ -314,12 +333,6 @@ table {
           cursor: pointer; }
           .form-right .signIn-conditions input:checked ~ span::after {
             content: '';
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            height: 11px;
-            width: 11px;
-            background: #5a5a5a;
             display: block; }
           .form-right .signIn-conditions input:checked ~ p {
             text-decoration: line-through; }
@@ -332,6 +345,21 @@ table {
           border: 1px solid #979797;
           transition: 0.5s;
           pointer-events: none; }
+          .form-right .signIn-conditions span::after {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            height: 11px;
+            width: 11px;
+            background: #5a5a5a;
+            transition: 0.5s; }
+          .form-right .signIn-conditions span:hover::after {
+            content: "";
+            display: block;
+            background: #979797;
+            opacity: 0.5; }
       .form-right .signIn input[type='submit'] {
         background: #343333;
         height: 52px;
@@ -339,7 +367,12 @@ table {
         color: #fff;
         letter-spacing: 1.62px;
         cursor: pointer;
-        border: none; }
+        border: none;
+        transition: 0.5s; }
+        .form-right .signIn input[type='submit']:hover {
+          background: none;
+          color: #343333;
+          border: 1px solid #343333; }
         @media (max-width: 1023px) {
           .form-right .signIn input[type='submit'] {
             height: 40px; } }
@@ -354,6 +387,8 @@ table {
       text-decoration: none;
       margin-top: 15px;
       text-align: center; }
+      .form-right .logIn-button:hover {
+        text-decoration: underline; }
       @media (max-width: 767px) {
         .form-right .logIn-button {
           font-size: 11px; } }
@@ -361,5 +396,15 @@ table {
 body {
   font-family: 'open-sans';
   font-weight: normal; }
+
+.error {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #A15E49; }
+  .error p {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0; }
 
 /*# sourceMappingURL=style.css.map */
