@@ -31,6 +31,14 @@
             </div>
         </div>
         <div class="form-right">
+            <div class="return return--mobile">
+                <a href="#" class="return-img">
+                    <img src="assets/img/arrow-return-mobile.svg" alt="arrow-return">
+                </a>
+                <a href="#">
+                    <p>Retour</p>
+                </a>
+            </div>
             <h2 class="form-right_title">Créer un compte</h2>
             <h4 class="form-right_subtitle">Veuillez renseigner les informations ci-dessous.</h4>
             <form action="POST" class="signIn">
@@ -131,8 +139,14 @@
                     </div>
                 </div>
                 <input type="text" name="postal" placeholder="Code Postal" class="signIn-input">
-                <input type="password" name="password" placeholder="Mot de Passe" class="signIn-input">
-                <input type="password" name="confirmPassword" placeholder="Confirmation mot de Passe" class="signIn-input">
+                <div class="signIn-input_password">
+                    <input type="password" name="password" placeholder="Mot de Passe" class="signIn-input">
+                    <img src="assets/img/input-password.svg" alt="input password">
+                </div>
+                <div class="signIn-input_password">
+                    <input type="password" name="confirmPassword" placeholder="Confirmation mot de passe" class="signIn-input">
+                    <img src="assets/img/input-password.svg" alt="input password">
+                </div>
                 <div class="signIn-conditions">
                     <input type="checkbox" name="conditions">
                     <span></span>

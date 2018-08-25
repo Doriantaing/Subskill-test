@@ -1,10 +1,43 @@
 .form {
     display: flex;
-    height: 100vh;
+    height: 100%;
     max-width: 1600px;
     margin: 0 auto;
-    @include for-size(tablet){
-        flex-direction: column-reverse;
+    @include for-size(tablet) {
+        height: 100%;
+    }
+    .return {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        font-family: 'Avenir';
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+        p {
+            margin-left: 17px;
+            @include for-size(mobile) {
+                font-size: 13px;
+            }
+        }
+        &--mobile {
+            display: none;
+            a {
+                color: $form-input;
+            }
+            .return-img {
+                img {
+                    @include for-size(mobile) {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+            @include for-size(tablet) {
+                display: flex;
+            }
+        }
     }
     &-left {
         width: 40%;
@@ -13,11 +46,11 @@
         @include for-size(big-desktop) {
             width: 800px;
         }
-        @include for-size(desktop){
+        @include for-size(desktop) {
             width: 434px;
         }
-        @include for-size(tablet){
-            width: 100%;
+        @include for-size(tablet) {
+            display: none;
         }
         &_container {
             padding: 48px 50px 0;
@@ -26,19 +59,6 @@
             flex-direction: column;
             position: relative;
             height: 100%;
-        }
-        .return {
-            display: flex;
-            align-items: center;
-            font-size: 15px;
-            font-family: 'Avenir';
-            a {
-                color: $white;
-                text-decoration: none;
-            }
-            p {
-                margin-left: 17px;
-            }
         }
         .content {
             position: absolute;
@@ -62,7 +82,7 @@
                 font-size: 14px;
                 letter-spacing: 0.5px;
                 line-height: 19px;
-                margin-right: 50px
+                margin-right: 50px;
             }
         }
     }
@@ -72,23 +92,49 @@
         font-size: 13px;
         color: $form-input;
         letter-spacing: 0.5px;
+        @include for-size(tablet) {
+            margin: 30px;
+            width: 100%;
+        }
+        @include for-size(mobile) {
+            margin: 30px 10px;
+            font-size: 11px;
+        }
         &_title {
             font-size: 22px;
             font-weight: 600;
             color: $title-form;
             letter-spacing: 0.9px;
             margin-bottom: 10px;
+            @include for-size(tablet) {
+                text-align: center;
+            }
+            @include for-size(mobile) {
+                font-size: 18px;
+                margin-top: 30px;
+            }
         }
         &_subtitle {
             font-size: 15px;
             color: $subtitle-form;
             letter-spacing: 0.6px;
             margin-bottom: 45px;
+            @include for-size(tablet) {
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            @include for-size(mobile) {
+                font-size: 13px;
+            }
         }
         .signIn {
             display: grid;
             grid-template-rows: repeat(10, 1fr);
             height: 90%;
+            @include for-size(tablet) {
+                justify-content: center;
+                height: unset;
+            }
             &-input {
                 border: none;
                 border-bottom: 1px solid rgba(151, 151, 151, 40);
@@ -97,6 +143,14 @@
                 outline: none;
                 font-size: 13px;
                 letter-spacing: 0.52px;
+                width: 100%;
+                @include for-size(tablet) {
+                    height: 25px;
+                    margin-bottom: 15px;
+                }
+                @include for-size(mobile) {
+                    font-size: 11px;
+                }
                 &::placeholder {
                     position: relative;
                     transition: 0.2s;
@@ -106,13 +160,30 @@
                         opacity: 0;
                     }
                 }
+                &_password {
+                    position: relative;
+                    img{
+                        width: 19px;
+                        height: 14px;
+                        position: absolute;
+                        top: 11px;
+                        right: 10px;
+                        cursor: pointer;
+                    }
+                }
             }
             &-gender {
                 display: flex;
                 margin-bottom: 25px;
                 align-items: center;
+                @include for-size(mobile) {
+                    justify-content: space-between;
+                }
                 &_title {
                     margin-right: 50px;
+                    @include for-size(mobile) {
+                        margin-right: 0;
+                    }
                 }
                 label {
                     margin-right: 36px;
@@ -120,6 +191,9 @@
                     display: flex;
                     align-items: center;
                     cursor: pointer;
+                    @include for-size(mobile) {
+                        margin-right: 0;
+                    }
                     p {
                         margin-left: 13px;
                     }
@@ -180,8 +254,13 @@
                     outline: none;
                     appearance: none;
                     -webkit-appearance: none;
+                    -moz-appearance: none;
                     height: 35px;
                     width: 100%;
+                    font-family: 'open-sans';
+                    @include for-size(mobile) {
+                        font-size: 11px;
+                    }
                 }
             }
             &-conditions {
@@ -189,6 +268,9 @@
                 align-items: flex-start;
                 font-size: 13px;
                 position: relative;
+                @include for-size(mobile) {
+                    font-size: 11px;
+                }
                 p {
                     margin-left: 13px;
                     color: $form-input;
@@ -235,6 +317,14 @@
                 text-transform: uppercase;
                 color: $white;
                 letter-spacing: 1.62px;
+                cursor: pointer;
+                border: none;
+                @include for-size(tablet) {
+                    height: 40px;
+                }
+                @include for-size(mobile) {
+                    font-size: 11px;
+                }
             }
         }
         .logIn-button {
@@ -243,9 +333,11 @@
             opacity: 0.8;
             letter-spacing: 0.52px;
             text-decoration: none;
-            position: relative;
-            top: -40px;
+            margin-top: 15px;
             text-align: center;
+            @include for-size(mobile) {
+                font-size: 11px;
+            }
         }
     }
 }
