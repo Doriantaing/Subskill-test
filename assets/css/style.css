@@ -183,8 +183,8 @@ table {
         .form-right_subtitle {
           font-size: 13px; } }
     .form-right .signIn {
-      display: grid;
-      grid-template-rows: repeat(10, 1fr);
+      display: flex;
+      flex-direction: column;
       height: 80%; }
       @media (max-width: 1023px) {
         .form-right .signIn {
@@ -316,7 +316,8 @@ table {
         display: flex;
         align-items: flex-start;
         font-size: 13px;
-        position: relative; }
+        position: relative;
+        margin-bottom: 35px; }
         @media (max-width: 767px) {
           .form-right .signIn-conditions {
             font-size: 11px; } }
@@ -396,20 +397,23 @@ table {
     border: none;
     background: none;
     border-radius: 0;
-    border-bottom: 1px solid #979797;
-    font-size: 13px;
-    color: #5a5a5a;
     outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    border-bottom: 1px solid #979797;
     height: 35px;
     width: 100%;
     cursor: pointer;
-    font-family: 'open-sans'; }
+    padding: 0; }
+    .form .selectr-selected::before {
+      content: '';
+      display: none; }
     @media (max-width: 767px) {
       .form .selectr-selected {
         font-size: 11px; } }
+  .form .selectr-label {
+    font-size: 13px;
+    font-family: 'open-sans';
+    color: #5a5a5a;
+    line-height: 35px; }
 
 body {
   font-family: 'open-sans';

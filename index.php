@@ -2,6 +2,7 @@
 
 $missing = $_GET['fieldsMissing'];
 $terms = $_GET['agreeTerms'];
+$password = $_GET['passwordsDifferent'];
 
    if(isset($missing)){
        ?>
@@ -13,6 +14,12 @@ $terms = $_GET['agreeTerms'];
        ?>
         <div class="error">
            <p>Vous devez accepter les conditions générales de ventes</p>
+       </div>
+       <?php
+   } else if(isset($password)){
+       ?>
+        <div class="error">
+           <p>Vous avez entrer deux mot de passe différents</p>
        </div>
        <?php
    }

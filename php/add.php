@@ -1,33 +1,63 @@
 <?php
+
+session_start();
+
 require_once 'connection.php';
 
-var_dump($_POST);
-$gender = $_POST['gender'];
-$lastname = $_POST['lastname'];
-$firstname = $_POST['firstname'];
-$email = $_POST['email'];
-$month = $_POST['month'];
-$year = $_POST['year'];
-$day = $_POST['day'];
-$postal = $_POST['postal'];
-$password = $_POST['password'];
-$confirmpassword = $_POST['confirmpassword'];
-$_conditions = $_POST['conditions'];
+$_SESSION['user']['email'] = $_POST['email'];
 
-if (
-!isset($gender) &&
-!isset($lastname) && 
-!isset($firstname) && 
-!isset($email) && 
-!isset($month) && 
-!isset($year) &&
-!isset($day) && 
-!isset($postal) && 
-!isset($password) && 
-!isset($confirmpassword)
-) {
-    if($_conditions === 'off'){
-        header('Location: ../index.php?agreeTerms');
-    }
+$password  = password_hash($_POST['password'] , PASSWORD_DEFAULT);
+
+// CHECK if all input values have been entered
+if (!isset($_POST['gender']) ||
+!isset($_POST['lastName'])||
+!isset($_POST['firstName']) ||
+!isset($_POST['email']) ||
+!isset($_POST['month']) ||
+!isset($_POST['year']) ||
+!isset($_POST['day']) ||
+!isset($_POST['postal'])||
+!isset($_POST['password']) ||
+!isset($_POST['confirmPassword'])) {
     header('Location: ../index.php?fieldsMissing');
+    exit;
 } 
+
+// CHECK if input checkbox is checked
+
+if(!isset($_POST['conditions'])){
+    header('Location: ../index.php?agreeTerms');
+    exit;
+}
+// CHECK if the passwords entered are the same
+
+if (password_verify($_POST['confirmPassword'], $password) == false) {
+    header('Location: ../index.php?passwordsDifferent');
+    exit;    
+}
+
+// SQL REQUEST
+
+$req = "INSERT INTO 
+`test_subskill` . `signIn` 
+(`id` , `gender` ,`lastName` , `firstName` , `email` , `month` , `year`, `user_day`, `postal` , `user_password`) 
+VALUES 
+(NULL , :gender , :lastName , :firstName , :email , :month , :year , :day , :postal , :password)
+;";
+
+$stmt = $conn->prepare($req);
+$stmt -> bindValue(':gender' , $_POST['gender']);
+$stmt -> bindValue(':lastName' , $_POST['lastName']);
+$stmt -> bindValue(':firstName' , $_POST['firstName']);
+$stmt -> bindValue(':email' , $_POST['email']);
+$stmt -> bindValue(':month' , $_POST['month']);
+$stmt -> bindValue(':year' , $_POST['year']);
+$stmt -> bindValue(':day' , $_POST['day']);
+$stmt -> bindValue(':postal' , $_POST['postal']);
+$stmt -> bindValue(':password' , $password);
+$stmt->execute();
+
+header('Location: sendMail.php');
+
+
+

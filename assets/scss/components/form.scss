@@ -134,8 +134,8 @@
             }
         }
         .signIn {
-            display: grid;
-            grid-template-rows: repeat(10, 1fr);
+            display: flex;
+            flex-direction: column;
             height: 80%;
             @include for-size(tablet) {
                 justify-content: center;
@@ -301,6 +301,7 @@
                 align-items: flex-start;
                 font-size: 13px;
                 position: relative;
+                margin-bottom: 35px;
                 @include for-size(mobile) {
                     font-size: 11px;
                 }
@@ -401,20 +402,25 @@
             border: none;
             background: none;
             border-radius: 0;
-            border-bottom: 1px solid $input-border;
-            font-size: 13px;
-            color: $form-input;
             outline: none;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
+            border-bottom: 1px solid $input-border;
             height: 35px;
             width: 100%;
             cursor: pointer;
-            font-family: 'open-sans';
+            padding: 0;
+            &::before{
+                content: '';
+                display: none;
+            }
             @include for-size(mobile) {
                 font-size: 11px;
             }
+        }
+        &-label{
+            font-size: 13px;
+            font-family: 'open-sans';
+            color: $form-input;
+            line-height: 35px;
         }
     }
 }

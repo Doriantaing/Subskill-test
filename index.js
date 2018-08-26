@@ -24,9 +24,11 @@ var form = {
     },
     styleSelect: function () {
         for (let i = 0; i < this.inputSelect.length; i++) {
-            new Selectr(this.inputSelect[i], {
-                searchable: false,
-            })
+            if (window.innerWidth > 768) {     
+                new Selectr(this.inputSelect[i], {
+                    searchable: false,
+                })
+            }
         }
     },
     init: function () {
