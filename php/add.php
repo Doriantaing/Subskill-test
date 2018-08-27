@@ -5,6 +5,8 @@ session_start();
 require_once 'connection.php';
 
 $_SESSION['user']['email'] = $_POST['email'];
+$_SESSION['user']['lastname'] = $_POST['lastName'];
+$_SESSION['user']['firstname'] = $_POST['firstName'];
 
 $password  = password_hash($_POST['password'] , PASSWORD_DEFAULT);
 

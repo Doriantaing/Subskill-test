@@ -68,12 +68,8 @@ table {
 
 .form {
   display: flex;
-  height: 100%;
   max-width: 1600px;
   margin: 0 auto; }
-  @media (max-width: 1023px) {
-    .form {
-      height: 100%; } }
   .form .return {
     display: flex;
     align-items: center;
@@ -184,8 +180,7 @@ table {
           font-size: 13px; } }
     .form-right .signIn {
       display: flex;
-      flex-direction: column;
-      height: 80%; }
+      flex-direction: column; }
       @media (max-width: 1023px) {
         .form-right .signIn {
           justify-content: center;
@@ -414,6 +409,15 @@ table {
     font-family: 'open-sans';
     color: #5a5a5a;
     line-height: 35px; }
+  .form .selectr-option {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px; }
+    .form .selectr-option.active {
+      background: #A15E49; }
+    .form .selectr-option.selected {
+      background: #979797;
+      color: #fff; }
 
 body {
   font-family: 'open-sans';
