@@ -40,6 +40,8 @@ $password = $_GET['passwordsDifferent'];
 <body>
 
     <section class="form">
+
+
         <div class="form-left">
             <div class="form-left_container">
                 <div class="return">
@@ -58,7 +60,10 @@ $password = $_GET['passwordsDifferent'];
                 </div>
             </div>
         </div>
+
+
         <div class="form-right">
+
             <div class="return return--mobile">
                 <a href="#" class="return-img">
                     <img src="assets/img/arrow-return-mobile.svg" alt="arrow-return">
@@ -67,8 +72,10 @@ $password = $_GET['passwordsDifferent'];
                     <p>Retour</p>
                 </a>
             </div>
+
             <h2 class="form-right_title">Créer un compte</h2>
             <h4 class="form-right_subtitle">Veuillez renseigner les informations ci-dessous.</h4>
+
             <form action="php/add.php" method="POST" class="signIn">
                 <div class="signIn-gender">
                     <p class="signIn-gender_title">Vous êtes</p>
@@ -90,9 +97,13 @@ $password = $_GET['passwordsDifferent'];
                         <p>Mme</p>
                     </label>
                 </div>
+
+
                 <input type="text" name="lastName" placeholder="Nom" value="" class="signIn-input">
                 <input type="text" name="firstName" placeholder="Prénom" value="" class="signIn-input">
                 <input type="text" name="email" placeholder="Email" value="" class="signIn-input">
+
+
                 <div class="signIn-date">
                     <div class="signIn-date_items">
                         <select name="month" class="select-js">
@@ -111,6 +122,8 @@ $password = $_GET['passwordsDifferent'];
                             <option>December</option>
                         </select>
                     </div>
+
+
                     <div class="signIn-date_items">
                         <select name="year" class="select-js">
                             <option></option>
@@ -128,6 +141,8 @@ $password = $_GET['passwordsDifferent'];
                             <option>2010</option>
                         </select>
                     </div>
+
+
                     <div class="signIn-date_items">
 
                         <select name="day" class="select-js">
@@ -166,7 +181,9 @@ $password = $_GET['passwordsDifferent'];
                         </select>
                     </div>
                 </div>
+
                 <input type="text" name="postal" placeholder="Code Postal" value="" class="signIn-input">
+
                 <div class="signIn-input_password">
                     <input type="password" name="password" placeholder="Mot de Passe" value="" class="signIn-input">
                     <svg width="16px" height="11px" viewBox="0 0 16 11" class="password-icons">
@@ -179,6 +196,8 @@ $password = $_GET['passwordsDifferent'];
                         </g>
                     </svg>         
                 </div>
+
+
                 <div class="signIn-input_password">
                     <input type="password" name="confirmPassword" placeholder="Confirmation mot de passe" value="" class="signIn-input">
                     <svg width="16px" height="11px" viewBox="0 0 16 11" class="password-icons">
@@ -191,11 +210,13 @@ $password = $_GET['passwordsDifferent'];
                         </g>
                     </svg>                
                 </div>
+
+
                 <div class="signIn-conditions">
-                    <input type="checkbox" name="conditions">
-                    <span></span>
-                    <p>J’accepte les
-                        <a href="#">conditions générales de ventes</a> et les respecteraient sans conditions. </p>
+                    <label>
+                        <input type="checkbox" name="conditions">
+                        <p>J’accepte les<a href="#"> conditions générales de ventes </a>et les respecteraient sans conditions.</p>
+                    </label>
                 </div>
 
                 <input type="submit" value="Créer un compte">

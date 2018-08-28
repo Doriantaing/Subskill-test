@@ -1,0 +1,30 @@
+.feedback{
+    background: url('../img/background-feedback.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    color: $white;
+    &-container{
+        padding: 48px 50px 0;
+    }
+    &-content{
+        padding-top: 200px;
+    }
+    &-title{
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.9px;
+        mix-blend-mode: difference;
+    }
+    &-desc{
+        mix-blend-mode: difference;
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        margin-top: 40px;
+    }
+    &-spam{
+        font-size: 12px;
+        margin-top: 20px;
+        letter-spacing: 0.6px;
+    }
+}

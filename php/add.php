@@ -42,7 +42,7 @@ if (password_verify($_POST['confirmPassword'], $password) == false) {
 
 $req = "INSERT INTO 
 `test_subskill` . `signIn` 
-(`id` , `gender` ,`lastName` , `firstName` , `email` , `month` , `year`, `user_day`, `postal` , `user_password`) 
+(`id` , `gender` ,`lastname` , `firstname` , `email` , `month` , `year`, `day`, `postal` , `password`) 
 VALUES 
 (NULL , :gender , :lastName , :firstName , :email , :month , :year , :day , :postal , :password)
 ;";
