@@ -11,6 +11,7 @@
 // Components
 
 @import 'components/form';
+@import 'components/feedback';
 
 
 body {
@@ -30,4 +31,45 @@ body {
         padding: 10px 0;
     }
     
+}
+
+ /** Return Button **/
+ .return {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Avenir';
+    a {
+        color: $white;
+        text-decoration: none;
+        img {
+            transition: 0.5s;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+    p {
+        margin-left: 17px;
+        @include for-size(mobile) {
+            font-size: 13px;
+        }
+    }
+    &--mobile {
+        display: none;
+        a {
+            color: $form-input;
+        }
+        .return-img {
+            img {
+                @include for-size(mobile) {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+        @include for-size(tablet) {
+            display: flex;
+        }
+    }
 }
