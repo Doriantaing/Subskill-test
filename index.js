@@ -23,6 +23,7 @@ var form = {
         }
     },
     styleSelect: function () {
+        console.log("ok");
         for (let i = 0; i < this.inputSelect.length; i++) {
             if (window.innerWidth > 768) {     
                 new Selectr(this.inputSelect[i], {
